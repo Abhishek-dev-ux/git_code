@@ -1,0 +1,462 @@
+
+Jenkins:
+Admin
+Praniabhi@12
+https://github.com/intelliqittrainings/maven.git
+**/*.war
+testapp
+http:/privateip:8080/
+https://github.com/intelliqittrainings/FunctionalTesting.git
+java -jar /home/ubuntu/.jenkins/workspace/Testing/testing.jar
+java -jar /home/ubuntu/.jenkins/workspace/Test-01/testing.jar
+
+
+/home/ubuntu/.jenkins/workspace/Development/webapp/target/
+/home/ubuntu/.jenkins/workspace/Development
+/home/ubuntu/.jenkins/workspace/Testing/
+
+
+LINUX1:
+Linux:this Linux in one organization is called as redhat,centos etc 
+commands
+touch file1 to create a file like 
+file1
+ls is used to show list of files
+to create a file we use cat > file1
+aaaa
+bbbb
+cccc
+then we need to comeout of cat command then type control D
+we need to type cate file1 it will display what file we have created
+aaaa
+bbbb
+cccc
+to create a file we use cat > > file1
+one
+two
+three
+then we need to type cate file1 it will display what file we have created
+aaaa
+bbbb
+cccc
+one
+two
+three
+Mkdir dir1 is used to create directory
+ls
+file1 file2 file3 file4 file5
+mkdir is used to makedirectory
+mkdir -p d1
+rm -r dir1 is filename is used to remove directory
+rm  file1 is used to remove the file
+pwd is used to show in which page we are  /home/ubuntu
+ls -l is used to show total list of files
+.(dot)file name is a hidden file
+ls -a is used to show hidden files
+
+1.if we want open a file or create a new file
+vim filename
+2.To edit the file or to enter some data in the file we should go in insert mode
+i
+3.To save the file and quit
+ESC  :wq Enter
+4.To quit without saving
+ESC  :q! Enter
+
+LINUX2:LS -l is showing the long listing of the file where the metadata is shown.
+ls -a is for all
+l-is the long listing
+t-t is the time stamp
+ls -la 0r ls -al,ls -alh,ls -altr 
+h- stands for human readable format that output comes under kb,mb,gigabyte
+r-is used to reverse the time stamp, we can notice that older files will come to top and newest files will at the bottom
+man -this is manual
+man -ls
+man --help -it will show you the list of commands
+Cd -if we want to move from one directory to another directory
+sudo apt install tree
+tree-command is command which will show you the tree structure
+we want to create tree directory-tree d1:it indicates where we are currently present and where you are planning to go
+d1-d2-d3-d4-d5
+cd d1
+ubuntu: d1$ pwd
+/home/ubuntu/d1
+ubuntu: d1$ cd d2/d3/d4/d5
+ubuntu: d1/d2/d3/d4/d5$ pwd
+/home/ubuntu/d1/d2/d3/d4/d5
+cd .. it will show the parent director of d5 i.e d1/d2/d3/d4
+ubuntu: pwd
+ubuntu: d1/d2/d3/d4
+ubuntu: cd ../.. d1/d2/d3/d4
+ubuntu: d1/d2
+ubuntu: cd ..
+ubuntu:pwd
+/home/ubuntu/d1
+ubuntu:cd ..
+/home/ubuntu/
+ubuntu: echo $HOME,it will show the root of the directory
+ubuntu:cd /tmp
+ubuntu: /tmp# pwd
+/tmp
+ubuntu: cd ~ it will also takes us to home directory
+
+LINUX3:
+create a file cat > file1
+one 
+two
+three
+ctrl+D
+ubuntu:ls
+file1
+ubuntu:cp file1 /tmp/file2
+ubuntu:cd /tmp
+ubuntu:/tmp$ ls
+file2
+ubuntu:/tmp$
+
+mkdir -p d1/d2/d3/d4
+ubuntu: tree d1
+ubuntu:touch d1/f1
+ubuntu: touch d1/d2/f2
+ubuntu: touch tree d1
+ubuntu: cp -r d1/tmp r(recursive)
+ubuntu: cd/tmp
+ubuntu: tmp$ ls
+d1
+file2
+ubuntu:/ tmp$ tree d1
+tree structure will be displayed with 4 directories and 2 files
+ubuntu:tmp$ cd
+ubuntu: ls
+d1 file1
+Here cut paste work is done ubuntu:mv file1/tmp
+ubuntu: ls
+d1
+ubuntu: cd /tmp
+ubuntu: /tmp$ ls
+d1
+file1
+file2
+ubuntu:/tmp$
+Move command will perform rename action ubuntu:/tmp$ mv file1 file10
+ubuntu:/tmp$ ls
+d1
+file10(file1 got renamed to file10)
+file2
+move(mv) is cut paste
+copy(CP)is copy paste
+soft link
+ln -s (ln it is used to create a link)(s is a soft link)
+ln -s file1 file2
+d1 file1 file2
+if we type cat file1 or cat file2 same files and output will be displayed
+if we delete file1, file2 will not show any data because file1 and file2 both are same
+Hard link
+rm file1
+d1 file2
+rm file2
+ls
+Jenkins.war(no suvh files or directories)
+cat > file1
+one
+two
+three
+CLTR D
+ls
+file1
+ls file1 file2
+file1 file2
+here in hard link when we delete file1 we can access and see data in file2 that is the difference b/w hard link and soft link.the same way copy command will also do the same thing when we copy and delete file1 it will show the data in file2.
+cat
+ln file1 file2
+cp file1 file3
+ls
+file1 file2 file3
+
+cat file1
+one
+two
+three
+cat file2
+one
+two
+three
+cat file3
+one
+two
+three
+cat >> file1
+four
+five
+six
+cat file1
+one
+two
+three
+four
+five
+six
+cat file2
+one
+two
+three
+four 
+five 
+six
+Hard link is the replica of the file whatever changes your making in the file will be replicated in that file
+cat file3
+one 
+two
+three
+
+ls -l
+total list of files:8
+for copied file it will come with same inode number
+where as in copy file whatever data present in the previous file will be displayed later whatever changes made cannot be shown
+touch: if you don't want to store any data in file we can go with touch command
+cat:if you want to store the data in a file and create a file ,you can go with cat command
+
+LINUX4:
+cat > file1 is creating a file or overwriting a file 
+cat >> file1 is appending a data to the file
+cat file1 is used to display the content of the file at the bottom section of the file
+less file1 is used to display the content of the file page by page we can navigate up and down and page by page
+head file1 is used to show top 10 lines of the file,if want only 3 lines then head -3 file1.
+tail file1 is used to show bottom 10 lines of the file,if want only  bottom 2 lines then tail -2 file1.
+grep one file1 will display when there is something like one present in any of the lines.grep -n one file1 will display in which line it is present.
+grep -v one file1 means reverse search where one is not present in lines like
+grep -nv one file1 other than the lines where the one is displayed it should display all the lines when we type the command 
+cut is used to cut the data in column fashion
+cat > file1
+jenkins bamboo gitlab
+docker swarm kubernetes
+git ansible terraform
+cltrl D
+ubuntu: cut -d " " -f 1,3 file1(d is delimiter f is field)
+jenkins gitlab
+docker kubernetes
+git terraform
+
+WC is used to show the word count, no.of words,no.of lines,no.of characters which are present in a file.
+wc file1,
+3 9 68 file1
+there are 3 lines,9 words,68 characters in a file
+if we want only count of lines wc -l file1
+3 file1
+if we want only count of lines wc -w file1
+9 file1
+if we want only count of lines wc -c file1
+68 file1
+cat file2
+5
+7
+1
+9
+2
+sort file2
+1
+2
+5
+7
+9ubuntu@ip-172-31-82-114:~$ cat >> file2 when we append the file and add the no.it will sort based on the characters of 1st digit then next the second one
+23
+65
+ubuntu@ip-172-31-82-114:~$ cat file2
+5
+9
+1
+7
+3
+23
+65
+ubuntu@ip-172-31-82-114:~$ sort file2
+1
+23
+3
+5
+65
+7
+9
+ubuntu@ip-172-31-82-114:~$ sort -n file2(n is a numerical sort)
+1
+3
+5
+7
+9
+23
+65
+ubuntu@ip-172-31-82-114:~$ sort -nr file2(r is reverse sort)
+65
+23
+9
+7
+5
+3
+1
+The above all commands like less,head,grep,wc,cut tail,etc re text processing tools)
+Redirection and pipeing
+all the data is present in cd /dev
+what ever we typing through keyboard,hardware command ,s/w command all are considered as files on monitor and whne type ls -l file1 now all the data is not shown on monitor it is shown is file1
+the data is not shown directly on screen then we should type ls -l file1
+then the data will be displayed in cat file1
+total 91184
+all the data is displayed in rows.
+cal command will show the current month calender
+In Linux multiple commands can be executed in one line with semi column date;cal
+date;cal > file1 the data in date command which is before ; that info will come on screen and cal and file info will be displayed in file1
+(date;cal) > file1 all the data is displayed in file1 now because paranthesis.
+if you want to store error msg in file use greater than symbol mkdir d1/d2/d3 2> file1
+(data;cal) > file1
+data and cal info will come in file1 and > means error info will be displayed on screen
+>(greater than is used to save only output in the file)output redirectional
+2>(if we want to save error into the file)error redirectional
+&>(if we ant to store error and output give ampasent and greaterthan)redirection of both
+LINUX5:
+pipeing :the output of one command becomes the input of other commands.
+ls - la will show the output of the command
+if this output we need to store in a file then ls - la > file1
+cat file1
+|(pipeline)ls -la | wc - l
+total lines:200
+head -5 /etc/passwd(head command will display the top 5 lines)
+tail command(tail command will display the bottom lines head -5 /etc/passwd | tail -1) 
+head -15 /etc/passwd | tail -10(line no from 6 to 15 is captured)
+head -15 /etc/passwd | tail -10 | grep spool (here head command is showing top 15 lines and the o/p is showing in tail i.e tail command is showing bottom 10 lines and grep is showing only spoof related lines)(|pipeline will take the command to any extent.)
+ubuntu@ip-172-31-82-114:~$ head -15 /etc/passwd | tail -10 | grep spool |cut -d ":" -f 1,7(it will leave the data from : and shows remaining data)
+if 1st character comes as   -rw-rw-r-- 1 ubuntu ubuntu 1016 Oct  4 19:18 file1 (-)then it is an ordinary file 
+if 1st character comes as   drw-rw-r-- 1 ubuntu ubuntu 1016 Oct  4 19:18 file1 (d)then it is an directory
+if 1st character comes as   lrw-rw-r-- 1 ubuntu ubuntu 1016 Oct  4 19:18 file1 (l)then it is an softlink file
+-rw-rw-r-- 1 (owner is having read and write permission and not having execute permissions)-4+2+1=7
+-rw-rw-r-- 1 (group is having read and write permission and not having execute permissions)4+1=5
+-rw-rw-r-- 1 (other is having only read permissions not having write and execute permissions)0
+so all permissions are chmod 750 file1
+these permissions can be changed in 2 ways one is numerical and another is alphabetical )
+r(read)-4,w(write)-2,X(execute)-1chmod 750 file1
+chmod command is used to modify the permissions
+
+chmod 750 file1
+-rwxr-x--- 1 ubuntu ubuntu 1016 Oct  4 19:18 file1(rwxr is owner having all permissions 4+2+1,group having, r-x--- 4+1, 1 other having 0)
+chmod files not only works on files it will work on directories
+chmod will work on parent directories 
+chmod command will create the chain of directories
+mkdir -p d1.d2.d3.d4
+mkdir -p d1/d2/d3/d4
+ubuntu@ip-172-31-82-114:~$ ls -l
+total 91196
+drwxrwxr-x 3 ubuntu ubuntu     4096 Oct  4 21:17 d1
+drwxrwxr-x 2 ubuntu ubuntu     4096 Oct  4 21:16 d1.d2.d3.d4
+drwxrwxrwx 2 ubuntu ubuntu     4096 Oct  4 21:13 dir1
+-rwxr-x--- 1 ubuntu ubuntu     1016 Oct  4 19:18 file1
+---x-w-r-- 1 ubuntu ubuntu       16 Oct  4 21:09 file2
+-rw-rw-r-- 1 ubuntu ubuntu 93358397 Oct  2 11:43 jenkins.war
+ubuntu@ip-172-31-82-114:~$ chmod 777 d1
+ubuntu@ip-172-31-82-114:~$ ls -l
+total 91196
+drwxrwxrwx 3 ubuntu ubuntu     4096 Oct  4 21:17 d1
+drwxrwxr-x 2 ubuntu ubuntu     4096 Oct  4 21:16 d1.d2.d3.d4
+drwxrwxrwx 2 ubuntu ubuntu     4096 Oct  4 21:13 dir1
+-rwxr-x--- 1 ubuntu ubuntu     1016 Oct  4 19:18 file1
+---x-w-r-- 1 ubuntu ubuntu       16 Oct  4 21:09 file2
+-rw-rw-r-- 1 ubuntu ubuntu 93358397 Oct  2 11:43 jenkins.war
+ubuntu@ip-172-31-82-114:~$ chmod 777 -R d1
+ubuntu@ip-172-31-82-114:~$ ls -l
+total 91196
+drwxrwxrwx 3 ubuntu ubuntu     4096 Oct  4 21:17 d1
+drwxrwxr-x 2 ubuntu ubuntu     4096 Oct  4 21:16 d1.d2.d3.d4
+drwxrwxrwx 2 ubuntu ubuntu     4096 Oct  4 21:13 dir1
+-rwxr-x--- 1 ubuntu ubuntu     1016 Oct  4 19:18 file1
+---x-w-r-- 1 ubuntu ubuntu       16 Oct  4 21:09 file2
+-rw-rw-r-- 1 ubuntu ubuntu 93358397 Oct  2 11:43 jenkins.war
+ubuntu@ip-172-31-82-114:~$ cd d1
+ubuntu@ip-172-31-82-114:~/d1$ ls -l
+total 4
+drwxrwxrwx 3 ubuntu ubuntu 4096 Oct  4 21:17 d2
+ubuntu@ip-172-31-82-114:~/d1$ cd d2
+ubuntu@ip-172-31-82-114:~/d1/d2$ ls -l
+total 4
+drwxrwxrwx 3 ubuntu ubuntu 4096 Oct  4 21:17 d3
+ubuntu@ip-172-31-82-114:~/d1/d2$ cd d3
+ubuntu@ip-172-31-82-114:~/d1/d2/d3$ ls -l
+total 4
+drwxrwxrwx 2 ubuntu ubuntu 4096 Oct  4 21:17 d4
+ubuntu@ip-172-31-82-114:~/d1/d2/d3$
+the default permissions of a file is 664
+the default permissions of a directory is 775
+who is defining file is coming with 664 permissions and directory with 775 google search and answer
+
+LINUX6:users(u),group(g),other(o)
+ubuntu@ip-172-31-33-175:~$ touch file1
+ubuntu@ip-172-31-33-175:~$ ls -l
+total 91176
+-rw-rw-r-- 1 ubuntu ubuntu        0 Oct  8 16:16 file1
+-rw-rw-r-- 1 ubuntu ubuntu 93358397 Oct  2 11:43 jenkins.war
+ubuntu@ip-172-31-33-175:~$ chmod u+X file1
+ubuntu@ip-172-31-33-175:~$ ls -l
+total 91176
+ubuntu@ip-172-31-33-175:~$ chmod u-r+x,g-rw,o=x file1(for users here we are removing read permissions and adding execute perms,here we are removing write and read perms for group, we are adding execute perms for others)
+ubuntu@ip-172-31-33-175:~$ ls -l
+total 91176
+--wx-----x 1 ubuntu ubuntu        0 Oct  8 16:35 file1
+ps command
+ps-aux
+top command
+htop is a command
+kill -9 5646(terminate forceably).we are killing the parent processor using kill -9,The child processor which are dependent are becoming zombie processor.
+kill -15 5646(this the parent processor)
+
+LINUX6:
+To create a new file or use existing file 
+vim file_name
+
+To edit the file or enter some data go to insert mode
+i
+
+To save the file and quit
+ESC :wq enter
+
+
+To quit without saving
+ESC :q! Enter
+
+CM (command mode)
+IM (Insert mode)
+EM(Execution mode)
+
+VI editing commands
+
+
+SSH from server1 to server2
+
+1.connect to server2
+2.Identify the default user
+whoami
+3.setup a password for default user
+sudo passwd username(ubuntu)
+4.Edit the sshd_config file
+sudo vim /etc/ssh/sshd_config
+search for "passwordAuthentication" and change it from no to yes
+5.Restart ssh
+sudo service ssh restart
+6.connect to server1
+7.Generate the ssh keys
+ssh-keygen
+8.copy the ssh keys
+ssh-copy-id username@ipaddress_of_server2
+
+https://github.com/krishnain/kubernetescomplete.git
+https://github.com/krishnain/maven.git
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

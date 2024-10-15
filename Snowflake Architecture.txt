@@ -1,0 +1,188 @@
+1.Introduction:About Nicholas
+
+2.Course outline : what is the course about
+
+3.How to benefit best from the course: we can use the udemy tool to learn,own pace,quiz,assignments,others help like notes,Q&A etc.
+
+4.All course slides & resources:In this we will have complete course in slides format in pdf
+
+5.singup for  free trail:singup -Snowflake.com
+
+6.login to the account:login 
+
+7.Getting to know the interface: Here we will know about the all the database and how to execute the queries.we can take the quries from resource file and execute in our worksheet if we don't have the database.
+
+8.Navigating the worksheets:Creating the new worksheets and moving it
+
+9.Snowflake Architecture
+
+We use the virtual warehouses as compute resources to process queries. True
+
+A virtual warehouse of the size M has ... how many servers running to process queries-4 servers
+
+Storage: we will store the actual data, for this we will use external Cloud provider(AWS).For storage we use AWS S3 bucket. We use hybrid columnar storage. We compress the data and store into blobs.
+
+Query processing: Here Query processing is called as muscle of the system.It provides actual compute intensive and complex queries power to execute the query.This is the layer where queries are processed. It performs massive parallel processing. It runs all the queries.
+and handles large amount of data. It combines all the multiple queries and process all at the same time.
+
+Cloud services: It is the brain of the system. Here we will manage the infracstructure,Access control,security,optimizer,metadata etc
+
+Multi clustering:For eg:server of size :S(small) If the warehouse contains the query load the additional clusters are activated and they can be formed(CLUSTERED together) into one warehouse.we can re-distribute the clusters if we have more queries so that the users don't have to wait.If we have more users and we have more queries then we use multi-cluster warehouse.
+
+If there are more queries they can be just qued to one warehouse then they will cost less.we have more compute power to process this simultaneously.
+
+If the queries are more complex then we need more computing capacity then we will increase the size of the warehouse instead of spinningup the additional clusters.
+
+
+10.Settingup the warehouse: Here we can create the warehouse with Accountadmin role or sysadmin role but we cannot create warehouse with useradmin,securityadmin role etc.
+
+11.Settingup the warehouse using SQL:Here we can create or replace the warehouse using sql commands
+
+12.Manage Warehouses: Here we can use the alter command to resume(start) or suspend the warehouse. We can modify the size of the warehouse like from small to xsmall etc through set command.
+We can drop the warehouse using drop command.we can resume,drop,edit or change the ownership of the warehouse.and we can do or check all these in warehouse.
+
+13.Scaling policies:
+
+Auto-scaling:When to start an additional clusters
+we have 2 scaling policy 1.standard and 2.Economy 
+
+Standard scaling policy: Description: it is by default .It just favours starting the additional warehouses and maintains the performance at higher level over conserving of credit conservation.
+Cluster starts: Immediately when either when a query is queued or the sys detects that there are more queries than can be executed by currently available clusters.
+Cluster Shut downs: After 2 to 3 consecutive  successful checks performed at 1min interval of time which determines whether the load on the least loaded cluster could be redistributed to the other clusters.
+
+Economy: Description: It favours conserving credits and running clusters fully loaded rather than starting additional warehouses
+Cluster starts: Only if the system estimates there is enough query load to keep the cluster busy for atleast 6minutes.
+Cluster shut down: After 5 to 6 consecutive  successful checks 
+
+14.Exploring tables and database:We can see database,schemas,tables, we can execute the queries. Here we can create a database. we can explore all the database related.
+We can create a privilege for useradmin.we can create a schema for accountadmin, we cannot create a scheme for useradmin,securityadmin.we can create the table using sql queries.
+
+15.Loading data in snowflake: Here we will create the database and the tables, we can alter the database name atawe can create a table loan payment then we can copy the data into loan payment.and see the data is copied into loan_payment table through SELECT *FROM Loan_Payment.
+
+16.What is a datawarehouse:It is a database combines different warehouses from diff sources combines into one consumable database with the purpose of reporting and analysis.
+A data warehouse is always a data base for analytical purpose.
+
+
+Purpose of a data warehouse:To consolidate and integrate with different data source to use them and optimize them for reporting and data analysis.
+
+ETL-It stands for extract, transform and load
+
+Different layers: 1.we extract the data for this we use some raw data 
+
+Raw data-Data integration-Access layer
+
+Data integration(we can clean the data)transform the data and integrate the data and we can also establish the relationship with diff data sources
+
+Access layer-This data is available for various solutions. This data can be included for reporting purpose. We can have some data visualization like powerBI are connecting directly to this layer. Data scientist can access the application to other apps and they usually access this access layer. This is one approach 
+
+Different layers Raw data(staging area):this is the layer where we extract the data from the sources and this also sometimes called as staging area
+Data integration(Data transformation)
+Access layer(where we are connecting to data)
+
+17.Cloud computing: we should have data centers for that we needs security, infrastructure,electricity,s/w/h/w upgrades so this is s/w as a service.
+
+we are only responsible for application that means creating the database,tables and just implementing our database tables and columns or according to our needs.
+
+
+This all are cloud provider AWS,Azure,GCP,they are taking care of  physical servers,Virtual servers,physical storage
+
+snowflake :Managing different data storage,virtual warehouses,upgrades/metadata etc.it manages all our databases and tables.It is s/w that we can create and manage our databases.
+
+We can focus on the application i.e creating and implementing our datawarehouses according to our needs.
+
+18.snowflake editions:
+1st edition: standard: Introductory level-Here all of the foundational features are available there
+
+Additional feature/services-2nd edition: Enterprise edition: we need additional features for the needs If we are large scale enterprises.All of the features in standard are included in enterprise edition for eg: we have multi cluster warehouse that will scaleout efficiently and fulfill  the needs of large scale enterprises.
+
+Additional feature/services-3rd Edition: Business critical:Here we can comply with specific regulations for eg: financial institutions -Even higher data protection for organization with extremely sensitive data.
+
+Additional feature/services-4th Edition:virtual private:used for highest level of security- we need to directly reachout to snowflake to setup this,we cannot setup using the website.and we have dedicated servers and the data cannot be shared with any company as we have dedicated env and service.
+
+
+We can check all these information in website snowflake.com in editions section
+
+Standard-All standard features,Automatic data encryption,Broad support for standard and special data types,Time travel upto 1 day,Disaster recovery for 7 days beyond time travel,n/w policy,secure data share,federated authenticating &SSO
+
+Enterprises: All Enterprise features,multi-cluster warehouse,time travel upto 90 days,meterialized views,search optimization,column level security,24 hours early access to weekly new releases.
+
+Business critical :All Enterprise features,Additional security features such as customer-managed encryption,support for data specific regulation,Database failure/failback,(Diaster Recovery)
+
+Virtual private:All business critical features,have dedicated virtual servers, and completely separate snowflake env. and Dedicated metadata store,Isolated from all the other snowflake a/c's -it won't share an h/w used by other customers.
+
+
+19.snowflake pricing:
+
+In snowflake pricing we have 2 types of costs they are compute cost and storage cost.
+
+1.Compute and storage costs decoupled
+2.pay only what you need
+3.scalable and at affordable cloud price
+4.pricing depends upon the region/cloud provider
+
+compute is separated into 3 diff parts.
+
+we have Active warehouse(if the warehouse is active we need to pay, standard query processing)-only charged when exceeds 10% of the warehouse consumption.
+we have cloud services (Behind the scenes the cloud service tasks)-it only charges when it exceeds 10% warehouse consumption
+we have serverless (search optimization snow pipe automatically resized)
+
+Compute: charged active warehouse per hour, Billed by second(min of 1 min),Depending upon the size of the warehouse, charged according to snowflake credits, First we consume those credits and later that credit works.
+Storage: monthly storage fees, based on avg storage used per hour, cloud providers, cost calculated after compression
+
+Demand storage: smart to start with demand storage
+
+Data transfer: Transfer to same region same cloud-$ 0.
+Transfer to diff region same cloud-$20
+Transfer to diff cloud-$90	
+
+20.Data storage and transfer cost:
+
+Storage: Monthly storage fees
+Based on the avg storage fees used per month
+Cloud providers
+cost calculated after compression
+
+ON Demand storage: pay only for what we use
+$40/TB
+
+Capacity storage: pay only for defined capacity upfront
+$24.50/TB
+
+If we don't have clarity about how much data we use then we need to use on demand storage it will cost less,if we have clarity about the usage then we can use capacity storage it will be cheaper.
+Start with on Demand
+Capacity storage: once your sure about your usage use capacity storage
+
+Data ingress free of cost:once we want data from external cloud provider it won't be cost
+
+Data egress charged:once we want data out of the snowflake it will be charged
+
+Cloud provider
+Transfer or replicate the data to different account (in different region and/or cloud provider)
+
+21.Monitor Usage: We many the usage of data according to date range
+
+Fall safe:it is the data we are protecting i.e data being lost
+
+key pair:data types-eg: key:department,pair:sales,marketing,may be analaytics theme
+
+22.Resource monitors: To monitor the resources of specific objects of specific warehouses
+ We can control and monitor the credit usage of warehouse and account 
+
+Loading data: There are 2 types of data
+1.Bulk loading: where we can load bulk data
+2.Continuous loading: where we load the data continuously
+
+Understanding the stages: Stage is one of the object in snowflake
+stage is the location of data files where data can be loaded from
+There are 2 stages 1.External stage: External cloud provider,S3,Google cloud platform,microsoft azure,Data base objects created in a schema,create stage(URL,access settings)
+2.Internal stage: Local storage maintained by snowflake
+
+
+
+
+
+
+
+
+
+
