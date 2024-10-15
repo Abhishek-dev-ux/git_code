@@ -1,0 +1,42 @@
+https://www.dmv-written-test.com/virginia/practice-test-24.html?page=5
+
+cd Downloads/
+
+ ssh -i "MyJenkinsseptember.pem" ubuntu@ec2-34-222-119-190.us-west-2.compute.amazonaws.com
+
+
+sudo apt-get update
+sudo apt-get install -y openjdk-11-jdk
+java -version
+sudo apt-get install -y git maven
+git  --version
+mvn  --version
+wget https://get.jenkins.io/war-stable/2.426.3/jenkins.war(right click download jenkins 2.426.3 LTS and click on copy link address)
+ls
+java -jar jenkins.war
+
+5def6593162b4ba19917886cb4d6c5b2-password for jenkins created in git bash
+
+http://34.222.119.190:8080/-jenkins url
+logout
+
+same way we need to do for QA server and prod server
+cd Downloads
+ ssh -i "MyJenkinsseptember.pem" ubuntu@ec2-54-70-126-146.us-west-2.compute.amazonaws.com
+sudo apt-get update
+
+  sudo apt-get install -y tomcat9
+
+  sudo apt-get install -y tomcat9-admin
+
+  cd /etc/tomcat9
+  etc/tomcat9   sudo vim tomcat-users.xml
+
+
+  <tomcat-users>
+     <user username="intelliqit" password="intelliqit" roles="manager-script"/>
+  </tomcat-users>
+
+54.70.126.146-not working
+
+
